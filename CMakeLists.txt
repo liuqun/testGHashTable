@@ -46,3 +46,12 @@ target_link_libraries(my_demo_prog PRIVATE
   ${OPENSSL_LIBRARIES}
   ${GLIB2_FULL_PATH}
 )
+# Add some tests
+add_executable(TestHashTable ${CMAKE_SOURCE_DIR}/tests/test-hash-table.c)
+set_property(TARGET TestHashTable PROPERTY C_STANDARD 11)
+target_include_directories(TestHashTable PRIVATE
+  ${GLIB2_INCLUDE_DIRS}
+)
+target_link_libraries(TestHashTable PRIVATE
+  ${GLIB2_FULL_PATH}
+)
