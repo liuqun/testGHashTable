@@ -18,9 +18,31 @@ message(STATUS "Using OpenSSL ${OPENSSL_VERSION}")
 message(STATUS "Using include dir ${OPENSSL_INCLUDE_DIR}")
 message(STATUS "Using libssl ${OPENSSL_SSL_LIBRARY}")
 message(STATUS "Using libcrypto ${OPENSSL_CRYPTO_LIBRARY}")
+#######################################################
+find_package(PkgConfig 0.29.1 REQUIRED)
+if (!PkgConfig_FOUND)
+  message(FATAL_ERROR "pkg-config are required but not found!")
+  return()
+endif ()
+#######################################################
+pkg_check_modules(GLIB2 REQUIRED glib-2.0)
+if (!GLIB2_FOUND)
+  message(FATAL_ERROR "GNU glib2 development files are required but not found!")
+  message(WARNING "Try: sudo apt-get install libglib2.0-dev")
+  return()
+endif ()
+find_library(GLIB2_FULL_PATH
+  NAMES glib-2.0
+  HINTS ${GLIB2_LIBDIR} ${GLIB2_LIBRARY_DIRS}
+)
+message(STATUS "Using include dir ${GLIB2_INCLUDE_DIRS}")
+message(STATUS "Using ${GLIB2_FULL_PATH}")
+#######################################################
 target_include_directories(my_demo_prog PRIVATE
   ${OPENSSL_INCLUDE_DIR}
+  ${GLIB2_INCLUDE_DIRS}
 )
 target_link_libraries(my_demo_prog PRIVATE
   ${OPENSSL_LIBRARIES}
+  ${GLIB2_FULL_PATH}
 )
