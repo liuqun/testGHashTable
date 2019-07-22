@@ -5,7 +5,7 @@
 
 1. Development tools:
 ```
-sudo apt-get install build-essential cmake libssl-dev
+sudo apt-get install build-essential cmake libssl-dev libglib2.0-dev
 ```
 
 2. Generate Makefile:
