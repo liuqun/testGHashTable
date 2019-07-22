@@ -1,0 +1,20 @@
+*.o
+*~
+~*
+.*.swp
+*.bak
+*.tmp
+
+# CMake output files
+CMakeCache.txt
+CMakeFiles
+cmake_install.cmake
+
+# Visual Studio Code
+.vscode
+
+# QtCreator
+*.user
+build-*-Debug
+build-*-Release
+build-*-Porfile
