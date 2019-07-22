@@ -21,8 +21,8 @@ make
 # 哈希表 GHashTable 使用说明
 - [样例代码](tests/test-hash-table.c)
 - [英文手册](https://developer.gnome.org/glib/stable/glib-Hash-Tables.html)
-- [头文件 ghash.h](file:///usr/include/glib-2.0/glib/ghash.h)
+- 头文件: /usr/include/glib-2.0/glib/ghash.h
 
 # 双向队列 GQueue 使用说明
 - [英文手册](https://developer.gnome.org/glib/stable/glib-Double-ended-Queues.html)
-- [头文件 gqueue.h](file:///usr/include/glib-2.0/glib/gqueue.h)
+- 头文件: /usr/include/glib-2.0/glib/gqueue.h
