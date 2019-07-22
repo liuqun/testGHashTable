@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.13.4)
+cmake_minimum_required(VERSION 3.10.2)
 project(MyDemoProject LANGUAGES C)
 
 aux_source_directory(src my_demo_SOURCES)
